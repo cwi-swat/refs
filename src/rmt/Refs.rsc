@@ -24,7 +24,10 @@ data Ref[&T]
 Ref[&T] referTo(type[&T<:node] typ, &T t) = ref(x)
   when Id x := getKeywordParameters(t)["uid"];
 
-data Id = id(int n);
+data Id
+  = id(int n)
+  | id(loc uri)
+  ;
  
 alias Realm = tuple[&T(type[&T<:node], &T) new];
 
